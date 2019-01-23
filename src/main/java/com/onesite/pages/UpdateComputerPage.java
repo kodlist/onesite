@@ -2,6 +2,8 @@ package com.onesite.pages;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 public class UpdateComputerPage {
 	
 	private WebDriver driver;	
-	
+	private static final Logger LOGGER = LogManager.getLogger(UpdateComputerPage.class);
 	 
 	 /*-------- constructor ---------*/	
 	 public  UpdateComputerPage(WebDriver driver) {
@@ -24,32 +26,28 @@ public class UpdateComputerPage {
 
 	 /*-------- page elements --------*/	
 	 
-	 @FindBy(how = How.ID, using = "name")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "name")	
 	 private WebElement computerNameField;
 	 
-	 @FindBy(how = How.ID, using = "introduced")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "introduced")	 
 	 private WebElement computerIntroducedField;	 
 	
-	 @FindBy(how = How.ID, using = "discontinued")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "discontinued")	
 	 private WebElement computerDiscontinuedField;
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@id='discontinued']")	 
+	 private WebElement computerDiscontinuedFieldToClear;
 	 
 	 @FindBy(id="company")
 	 private WebElement company_dropdown;	
 	 
 	 @FindBy(how=How.CSS ,using="input[type='submit']")
-	 private WebElement saveComputer_submitButton;
+	 private WebElement saveComputer_submitButton;	
 	 
-	
-	 
-	 @FindBy(how = How.ID, using = "searchbox")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchbox")	 
 	 private WebElement computerSearchBox;
 	 
-	 @FindBy(how = How.ID, using = "searchsubmit")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchsubmit")	
 	 private WebElement searchSubmit;
 	 
 	 @FindBy(how = How.XPATH,  using = "//*[@id='main']/table/tbody")	 
@@ -94,7 +92,7 @@ public class UpdateComputerPage {
 	 private String nameOfComputerToSearch = null;
 	 private String nameOfComputerToUpdate = null;
 	 
-	 /*------- action methods -------*/
+	 /*------- action methods and fields -------*/
 	 
 	 public String getNameOfComputerToUpdate(){
 		 return nameOfComputerToUpdate;
@@ -126,9 +124,15 @@ public class UpdateComputerPage {
 	 public  WebElement getComputerNameLinkWebElement(){
 		 return element_locator_link_forComputerName;
 	 }
+	 public String getDiscontinuedDate(){
+		return this.computerDiscontinuedFieldToClear.getAttribute("value");
+	 }
+	 public void setDiscontinuedDateFieldEmpty(){
+		 computerDiscontinuedField.clear();
+	 }
 	 
-	 public void searchForComputerInTheExistingTable(long numberOfComputersInTableList){		 
-		 long noOfComputers = numberOfComputersInTableList;
+	 public void searchForComputerInTheExistingTable(){
+		 LOGGER.info("------- trying to search for computer that I need --------");
 		 boolean flag = false;
 		 List<WebElement> rowsInTableBody = tableBody.findElements(By.tagName("tr"));
 		 for(WebElement webElement : rowsInTableBody){			 
@@ -142,9 +146,36 @@ public class UpdateComputerPage {
 		 			flag);		 
 	 }
 	 
-	 public void clickTheComputerNameLinkToUpdate(String nameOfComputer_link){		 
+	 public void clickTheComputerNameLinkToUpdate(String nameOfComputer_link){		
 		 setComputerNameLinkWebElement(getComputerNameWebElement().findElement(By.linkText(nameOfComputer_link)));
 		 getComputerNameLinkWebElement().click();
+		 LOGGER.info("------- clicked on computer link that I need --------");
+	 }	 
+	 
+	 public void searchForUpdatedDiscontinuedDateAndValidate(String dateToSearch){
+		 LOGGER.info("------- trying to see whether the discontinued date is updated --------");
+		 boolean flag = false;
+		 List<WebElement> rowsInTableBody = tableBody.findElements(By.tagName("tr"));
+		 for(WebElement webElement : rowsInTableBody){			 
+			 if(webElement.findElement(By.tagName("td")).getText().equalsIgnoreCase(getNameOfComputerToSearch())){
+				 setNameOfComputerToUpdate(webElement.findElement(By.tagName("td")).getText());				
+				 setComputerNameWebElement(webElement.findElement(By.tagName("td")));
+				 List<WebElement> listOrColumnsInTheRow = webElement.findElements(By.tagName("td"));				 
+				 for(WebElement webElementTd : listOrColumnsInTheRow){ 					
+					 if(!(webElementTd.getText().equalsIgnoreCase(dateToSearch))){
+						 System.out.println("--------- line 161 ----- "+webElementTd.getText() );
+						 flag = true;
+					 }
+				 }				 
+			  }
+		 }
+		 Assert.assertTrue("the computer should be updated with new date "+ dateToSearch+ " and it should be showing same in the UI.",
+		 			flag);
+		 LOGGER.info("------- the updated discontinued date is updated with no issues... --------");
+	 }
+	 
+	 public void ourOldDiscontinuedDateIsNotEqualToNewUpdateDate(String dateToSearch){
+		 searchForUpdatedDiscontinuedDateAndValidate(dateToSearch);
 	 }
 	 
 	 

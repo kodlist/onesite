@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.onesite.pages.CreateComputerPage;
 import com.onesite.pages.DeleteComputerPage;
 import com.onesite.pages.ReadComputerPage;
+import com.onesite.pages.UpdateComputerPage;
 import com.onesite.pages.itempage.ItemPage;
 import com.onesite.pages.shippingaddresspage.ShippingAddressPage;
 
@@ -14,6 +15,7 @@ public class PageObjectManager {
 	private ReadComputerPage readComputerPage;
 	private CreateComputerPage createComputerPage;
 	private DeleteComputerPage deleteComputerPage;
+	private UpdateComputerPage updateComputerPage;
 	private static PageObjectManager pageObjectManager;
 	 
 	public PageObjectManager(WebDriver driver) {
@@ -53,5 +55,16 @@ public class PageObjectManager {
 	public void setDeleteComputerPageInstanceToNull(){
 		deleteComputerPage = null;
 	}
+	
+	public UpdateComputerPage getUpdateComputerPage(){
+		if(updateComputerPage ==  null){ return updateComputerPage = new UpdateComputerPage(driver);			
+		}else{ return updateComputerPage;			
+		}
+	}	
+	public void setUpdateComputerPageInstanceToNull(){
+		updateComputerPage = null;
+	}
+	
+	
 	
 }

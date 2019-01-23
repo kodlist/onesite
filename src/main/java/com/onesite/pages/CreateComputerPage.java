@@ -2,6 +2,8 @@ package com.onesite.pages;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +13,12 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.onesite.hooks.TestBaseSetUp;
+
 public class CreateComputerPage {
 	
 	private WebDriver driver;
+	private static final Logger LOGGER = LogManager.getLogger(CreateComputerPage.class);
 	
 	 /*-------- constructor ---------*/
 	
@@ -24,20 +29,16 @@ public class CreateComputerPage {
 	
 	 /*-------- page elements --------*/
 	 
-	 @FindBy(how = How.ID, using = "add")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "add")	 
 	 private WebElement addNewComputerBtn;
 	
-	 @FindBy(how = How.ID, using = "name")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "name")	
 	 private WebElement computerNameField;
 	 
-	 @FindBy(how = How.ID, using = "introduced")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "introduced")	
 	 private WebElement computerIntroducedField;	 
 	
-	 @FindBy(how = How.ID, using = "discontinued")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "discontinued")	
 	 private WebElement computerDiscontinuedField;
 	 
 	 @FindBy(id="company")
@@ -46,9 +47,10 @@ public class CreateComputerPage {
 	 @FindBy(how=How.CSS ,using="input[type='submit']")
 	 private WebElement createComputer_submitButton;
 	 
-	 /*--------- methods ----------*/
+	 /*--------- element methods ----------*/
 	 
 	 public void clickAddComputer(){
+		 LOGGER.info("------ now in create computer page ------");
 		 this.addNewComputerBtn.click();
 	 }
 	 
@@ -76,9 +78,9 @@ public class CreateComputerPage {
 		 this.nameOfCompanyThatWasChoosen = nameOfCompanyAtIndex;
 	 }
 	 
-	 /*-------- action methods --------*/
+	 /*-------- action methods and fields --------*/
 	 
-	 public void selectCompany(int index){  System.out.println("driver in create page ----line 81 --- "+driver);
+	 public void selectCompany(int index){  
 	     Select statusDropdown = new Select(company_dropdown);
 	     //statusDropdown.selectByVisibleText(companyToPick);
 	     statusDropdown.selectByIndex(index);
@@ -89,6 +91,7 @@ public class CreateComputerPage {
 	     if(nameOfCompanyAtIndex == null){
 	    	 throw new NoSuchElementException("company at index 2 is not selected....please check ");
 	     }	     
+	     LOGGER.info("------- company selected from drop down ------");
 	 }
 	 
 	/* public void select_Company(String companyName) 

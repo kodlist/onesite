@@ -2,6 +2,8 @@ package com.onesite.pages;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 public class DeleteComputerPage {
 	
 	private WebDriver driver;	
-	
+	private static final Logger LOGGER = LogManager.getLogger(DeleteComputerPage.class);
 	 
 	 /*-------- constructor ---------*/	
 	 public  DeleteComputerPage(WebDriver driver) {
@@ -23,12 +25,10 @@ public class DeleteComputerPage {
 	}
 
 	 /*-------- page elements --------*/	 
-	 @FindBy(how = How.ID, using = "searchbox")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchbox")	 
 	 private WebElement computerSearchBox;
 	 
-	 @FindBy(how = How.ID, using = "searchsubmit")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchsubmit")	 
 	 private WebElement searchSubmit;
 	 
 	 @FindBy(how = How.XPATH,  using = "//*[@id='main']/table/tbody")	 
@@ -51,11 +51,16 @@ public class DeleteComputerPage {
 		 this.searchSubmit.submit();
 	 }
 	 public void clickDeleteThisComputerBtn(){
+		 LOGGER.info("------- now clicking deleting computer --------");
 		 deleteComputer_submitButton.submit();
 	 }
 	 public String getNothingToDisplayText(){
+		 LOGGER.info("------- since we deleted out computer from earlier scenario, it should no persist in UI --------");
 		 return nothingToDisplay_fromComputerList.getText();
 	 }
+	 
+	 /*-------- action methods and fields ---------*/
+	 
 	 private long numberOfComputers = 0;
 	 
 	 public long getNumberOfComputers(){
@@ -96,8 +101,8 @@ public class DeleteComputerPage {
 		 return element_locator_link_forComputerName;
 	 }
 	 
-	 public void searchForComputerInTheExistingTable(long numberOfComputersInTableList){		 
-		 long noOfComputers = numberOfComputersInTableList;
+	 public void searchForComputerInTheExistingTable(){	
+		 LOGGER.info("------- trying to search for computer that I need --------");
 		 boolean flag = false;
 		 List<WebElement> rowsInTableBody = tableBody.findElements(By.tagName("tr"));
 		 for(WebElement webElement : rowsInTableBody){			 
@@ -111,7 +116,8 @@ public class DeleteComputerPage {
 		 			flag);		 
 	 }
 	 
-	 public void clickTheComputerNameLinkToDelete(String nameOfComputer_link){		 
+	 public void clickTheComputerNameLinkToDelete(String nameOfComputer_link){
+		 LOGGER.info("------- trying to click the computer that I need --------");
 		 setComputerNameLinkWebElement(getComputerNameWebElement().findElement(By.linkText(nameOfComputer_link)));
 		 getComputerNameLinkWebElement().click();
 	 }
@@ -122,7 +128,7 @@ public class DeleteComputerPage {
 		 if(text_nothingToDisplay.equalsIgnoreCase(expectedText)){
 			 flag_For_NothingToDisplay = true ;
 		 }
-		 Assert.assertTrue("No computer found with selected name, hence "+ getNothingToDisplayText()+ " .",	flag_For_NothingToDisplay);
+		 Assert.assertTrue("No computer found with selected name, hence "+ getNothingToDisplayText()+ " .",	flag_For_NothingToDisplay);		 
 	 }
 	 
 

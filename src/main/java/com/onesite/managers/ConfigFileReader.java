@@ -111,14 +111,5 @@ public class ConfigFileReader {
 		
 	}
 	
-	
-	
-	public static void main(String[] args) {
-		
-		ConfigFileReader c = new ConfigFileReader();
-		
-		System.out.println(c.getDriverPath());
-		
-	}
 
 }

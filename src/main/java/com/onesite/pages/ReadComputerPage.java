@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.onesite.hooks.TestBaseSetUp;
 import com.onesite.managers.ConfigFileReader;
 import com.onesite.managers.FileReaderManager;
 import com.onesite.pages.core.CommonActions;
@@ -20,7 +23,7 @@ import com.onesite.pages.core.CommonActions;
 public class ReadComputerPage {	
 	
 	 private WebDriver driver;	
-		
+	 private static final Logger LOGGER = LogManager.getLogger(ReadComputerPage.class);	
 	 
 	 /*-------- constructor ---------*/	
 	 public  ReadComputerPage(WebDriver driver) {
@@ -29,12 +32,10 @@ public class ReadComputerPage {
 	}
 
 	 /*-------- page elements --------*/	 
-	 @FindBy(how = How.ID, using = "searchbox")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchbox")	 
 	 private WebElement computerSearchBox;
 	 
-	 @FindBy(how = How.ID, using = "searchsubmit")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "searchsubmit")	 
 	 private WebElement searchSubmit;
 	 
 	 @FindBy(how = How.CLASS_NAME, using = "computers zebra-striped")	 
@@ -46,12 +47,10 @@ public class ReadComputerPage {
 	 @FindBy(how = How.XPATH,  using = "//*[@id='pagination']/ul/li[1]/a")	 
 	 private WebElement previousBtnOrLink;
 	 
-	 @FindBy(how = How.ID, using = "add")
-	 @CacheLookup
+	 @FindBy(how = How.ID, using = "add")	 
 	 private WebElement addNewComputerBtn;
 	 
-	 @FindBy(how = How.LINK_TEXT, using = "Computer name")
-	 @CacheLookup
+	 @FindBy(how = How.LINK_TEXT, using = "Computer name")	 
 	 private WebElement header_computerName;	 
 	
 	 @FindBy(how = How.XPATH,  using = "//*[@id='main']/table/thead")	 
@@ -70,6 +69,7 @@ public class ReadComputerPage {
 	 /*--------- element methods ----------*/
 	 
 	 public void searchComputer(String computerNameToSearch){
+		 LOGGER.info("------- in main page or read page and driver to search for a computer ------- ");
 		 this.computerSearchBox.sendKeys(computerNameToSearch);		 
 	 }
 	 
@@ -88,7 +88,6 @@ public class ReadComputerPage {
 	 public void clickAddNewComputerButton(){
 		 this.addNewComputerBtn.click();
 	 }	 
-	 
 	 
 	 private long numberOfComputers = 0;
 	 private String nameOfComputerToSearch = null;
@@ -123,7 +122,8 @@ public class ReadComputerPage {
 			  }
 		 }
 		 Assert.assertTrue("the computer name "+ getNameOfComputerToSearch()+ " should be same as the one in the list",
-		 			flag);		 
+		 			flag);
+		 LOGGER.info("-------- computer found --------- ");
 	 }
 	 public void getNumberOfRowsWithComputers(){
 		 List<WebElement> rowsInTableBody = tableBody.findElements(By.tagName("tr"));		 

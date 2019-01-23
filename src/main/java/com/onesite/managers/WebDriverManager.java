@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +17,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 
+
 import com.onesite.core.BrowserType;
+import com.onesite.hooks.TestBaseSetUp;
 
 
 public class WebDriverManager {
@@ -25,7 +29,7 @@ public class WebDriverManager {
 	 private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 	 private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
 	 private static final String IE_DRIVER_PROPERTY = "webdriver.ie.driver";
-	 
+	 private static final Logger LOGGER = LogManager.getLogger(WebDriverManager.class);
 	 
 	 public WebDriverManager() {
 		 browserType = FileReaderManager.getInstance().getConfigReaderInstance().getBrowserType();	
@@ -43,11 +47,17 @@ public class WebDriverManager {
 	 private WebDriver createDriver(BrowserType browserType) {		 
 		 switch(browserType) {
 		 	case CHROME:
-		 		driver = setChromeDriver(); break;
+		 		driver = setChromeDriver(); 
+		 		LOGGER.info("-------- setting chrome driver -------");
+		 		break;
 		 	case FIREFOX:
-		 		driver = setFirefoxDriver(); break;
+		 		driver = setFirefoxDriver();
+		 		LOGGER.info("-------- setting firefox driver -------");
+		 		break;
 		 	case INTERNETEXPLORER:
-		 		driver = setInternetExplorerDriver(); break;
+		 		driver = setInternetExplorerDriver();
+		 		LOGGER.info("-------- setting IE driver -------");
+		 		break;
 		 }	  
 	    return driver;
 	 }
@@ -121,7 +131,8 @@ public class WebDriverManager {
 	
 
 	 /*
-	  * this method is useful for tests to run using selenium grid with remote machines configured. 
+	  * This method is useful for tests to run using selenium grid with remote machines configured.
+	  * I haven't implemented, so the below method is no use.
 	  */
 	 private WebDriver createRemoteDriver() {
 	 	throw new RuntimeException("RemoteWebDriver is not yet implemented");
@@ -131,12 +142,11 @@ public class WebDriverManager {
 	/*
 	 * close() is a webdriver command which closes the browser window which is currently in focus.
 	 * During the automation process, if there are more than one browser window opened, then the close() command will close
-	 * only the current browser window which is having focus at that time. The remaining browser windows will not be closed.
-	 * 
-	 * https://stackoverflow.com/questions/15067107/difference-between-webdriver-dispose-close-and-quit
+	 * only the current browser window which is having focus at that time. The remaining browser windows will not be closed.	
 	 * 
 	 */		
 	 public void closeDriver() {
+		 LOGGER.info("-------- closing webdriver -------");
 		driver.close();		
 	 }
 	
@@ -144,12 +154,11 @@ public class WebDriverManager {
 	  * quit() is a webdriver command which calls the driver.dispose method, 
 	  * which in turn closes all the browser windows and terminates the WebDriver session.
 	  * If we do not use quit() at the end of program, the WebDriver session will not be 
-	  * closed properly and the files will not be cleared off memory. This may result in memory leak errors.
-	  * 
-	  * https://stackoverflow.com/questions/15067107/difference-between-webdriver-dispose-close-and-quit
+	  * closed properly and the files will not be cleared off memory. This may result in memory leak errors.  
 	  * 
 	  */
 	 public void quitDriver(){
+		 LOGGER.info("-------- quiting webdriver -------");
 		driver.quit();
 	 }
     
