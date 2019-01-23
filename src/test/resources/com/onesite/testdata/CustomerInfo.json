@@ -1,0 +1,19 @@
+[
+  {
+    "firstName":"john",
+    "lastName":"carsel",
+    "address1":"hyde park, 100 ea",
+    "phone":"0044 3450988979",
+    "email":"john.carsel@gmail",
+    "country":"united kingdom"   
+  },
+  {
+    "firstName":"huge",
+    "lastName":"grant",
+    "address1":"st marks road",
+    "phone":"0044 745784785",
+    "email":"huge.grant@gmail",
+    "country":"united kingdom"   
+  }
+  
+]
