@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 
-import com.onesite.Sample;
 import com.onesite.hooks.TestBaseSetUp;
 import com.onesite.managers.FileReaderManager;
 import com.onesite.managers.PageObjectManager;
@@ -43,12 +42,9 @@ public class CreateComputerPageSteps {
 	String newComputerName;
 	
 	@When("^my first step I will click add new computer button in create page$")
-	public void i_will_click_add_new_computer_button_from_createPage() throws Throwable {
-		LOGGER.info("****************************************************************************************");
-		LOGGER.info("****************************************************************************************");
-		LOGGER.info("$$$$$$$$$$$$$$$$$$$$$                 "+"new computer button in create"+ "       $$$$$$$$$$$$$$$$$$$$$$$$$");
-		createComputerPage.clickAddComputer();	
-		LOGGER.debug("--------debug------");
+	public void i_will_click_add_new_computer_button_from_createPage() throws Throwable {		
+		LOGGER.info("------------ click add new computer button -------------");
+		createComputerPage.clickAddComputer();		
 	}	
 	public String getNewComputerName(){
 		return newComputerName;

@@ -56,8 +56,8 @@ public class TestBaseSetUp {
     	scenario.getSourceTagNames().stream().forEach(c-> { String scenarioName = c.substring(1) ; setScenarioName(scenarioName) ;});
     	LOGGER.info("-------------------------------------");
     	LOGGER.info("-------------------------------------");
-    	LOGGER.info("---------Start of Scenario----------");
-        LOGGER.info("--------"+ getScenarioName() +"---------");
+    	LOGGER.info("--------- Start of Scenario ----------");
+        LOGGER.info("-------- scenario name : "+ getScenarioName() +" ---------");
     } 
    
  
@@ -79,11 +79,13 @@ public class TestBaseSetUp {
 		} catch (InterruptedException e) {			
 			e.printStackTrace();
 		}
-    	//webDriverManager.closeDriver();    	
-    	//webDriverManager.quitDriver();
-    	pageObjectManager = null;        
+    	webDriverManager.closeDriver();    	
+    	webDriverManager.quitDriver();
+    	pageObjectManager = null; 
+    	LOGGER.info("......................................");
         LOGGER.info("-----------End of Scenario-----------");
-        
+        LOGGER.info("......................................");
+        LOGGER.info("......................................");
     } 
     @After(order=1)
     public void afterScenario(){

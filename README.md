@@ -1,4 +1,4 @@
-## Test cases and Test automation 
+## Objective: Test cases and Test automation 
 
 1. Please navigate to the following sample application: http://computer-database.herokuapp.com/computers
 2. Select one of the computers and create a series of manual test cases that cover the CRUD operation plus the edge cases.
@@ -34,8 +34,11 @@ Go to your project directory from terminal and hit following commands
 Running test from IDE (Eclipse)
 -------------------------------
 
-Go to your project directory from terminal and hit following commands
-* `mvn test (defualt will run on local firefox browser)`
+1. clone the git project https://github.com/meharlist/onesite.git
+2. Import to IDE
+3. open TestRunner class from `src/test/java/com/onesite`
+4. runs as junit test
+
 
 Running test from Jenkins
 -------------------------------
