@@ -6,8 +6,7 @@ import com.onesite.pages.CreateComputerPage;
 import com.onesite.pages.DeleteComputerPage;
 import com.onesite.pages.ReadComputerPage;
 import com.onesite.pages.UpdateComputerPage;
-import com.onesite.pages.itempage.ItemPage;
-import com.onesite.pages.shippingaddresspage.ShippingAddressPage;
+
 
 public class PageObjectManager {
 	

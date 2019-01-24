@@ -1,9 +1,12 @@
 Feature: Automated End2End Tests
 
-Description: The purpose of this feature is to test End-2-End regression tests from UI. This scenario mainly focus on postive test cases with 
-             primary objective being - CREATE, READ, UPDATE, DELETE -
+Description: The purpose of this feature is to test CRUD operations.
+             We first create computer and save, then read the new computer, next update the computer and finally delete computer from system.
+             This complete flow is End-2-End regression (CRUD) test from UI. 
+             This scenario mainly focus on postive test cases with 
+             primary objective being - CREATE, READ, UPDATE, DELETE
 
-Background: User is Logged In
+Background: user should navigate to main search page
  Given with application url I will navigate to the main search page
 
 

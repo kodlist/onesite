@@ -105,7 +105,7 @@ public class WebDriverManager {
 	}
 	
 	 /*
-	  * I haven't configured this tests for IE browser.
+	  * I haven't configured these tests for IE browser.
 	  * So the below method is no use.
 	  */
 	 private  WebDriver setInternetExplorerDriver() {
@@ -117,7 +117,7 @@ public class WebDriverManager {
 	}
 	
 	 /*
-	  * I haven't configured this tests for IE edge browser.
+	  * I haven't configured these tests for IE edge browser.
 	  * So the below method is no use.
 	  */
 	 private  WebDriver setInternetExplorerEdgeDriver() {

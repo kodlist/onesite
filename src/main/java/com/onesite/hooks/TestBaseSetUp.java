@@ -50,6 +50,7 @@ public class TestBaseSetUp {
         webDriverManager = new WebDriverManager();
         driver = getDriver(webDriverManager);        
     } 
+	
     @Before(order=0)
     public void beforeScenarioStart( Scenario scenario ){    	
     	this.scenario = scenario;
@@ -87,6 +88,7 @@ public class TestBaseSetUp {
         LOGGER.info("......................................");
         LOGGER.info("......................................");
     } 
+    
     @After(order=1)
     public void afterScenario(){
     	LOGGER.info("-----------All sessions - including page objects, utilities, page manager, webdriver closed ----------");

@@ -30,8 +30,7 @@ import cucumber.api.junit.Cucumber;
 
 public class CreateComputerPageSteps {
 	private static final Logger LOGGER = LogManager.getLogger(CreateComputerPageSteps.class);	
-	WebDriver driver = TestBaseSetUp.getWebDriverInstance();
-	//String scenarioName = TestBaseSetUp.getScenarioName();
+	WebDriver driver = TestBaseSetUp.getWebDriverInstance();	
 	PageObjectManager pageObjectManager = PageObjectManager.getpageObjectManagerInstance(driver);
 	ReadComputerPage readComputerPage = pageObjectManager.getReadComputerPage();
 	CreateComputerPage createComputerPage = pageObjectManager.getCreateComputerPage() ;
@@ -39,7 +38,7 @@ public class CreateComputerPageSteps {
 	JSONUtil jsonUtil = JSONUtil.getJSONUtilInstance();
 	DateUtil dateUtil = DateUtil.getDateUtilInstance();
 	RandomNumberUtil randomNumberGen = RandomNumberUtil.getRandomNumberUtil();
-	String newComputerName;
+	private String newComputerName;
 	
 	@When("^my first step I will click add new computer button in create page$")
 	public void i_will_click_add_new_computer_button_from_createPage() throws Throwable {		

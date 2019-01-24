@@ -1,5 +1,10 @@
 package com.onesite.testdata.pojo;
 
+
+/*
+ * no use in this project work.
+ * 
+ */
 public class CustomerInfo {
 	
 	public String firstName;

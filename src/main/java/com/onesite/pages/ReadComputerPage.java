@@ -1,9 +1,6 @@
 package com.onesite.pages;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -15,10 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import com.onesite.hooks.TestBaseSetUp;
-import com.onesite.managers.ConfigFileReader;
-import com.onesite.managers.FileReaderManager;
-import com.onesite.pages.core.CommonActions;
 
 public class ReadComputerPage {	
 	

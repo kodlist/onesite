@@ -1,22 +1,17 @@
 package com.onesite.utilities;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.Month;
 import java.time.Year;
-import java.time.ZonedDateTime;
+
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.GregorianCalendar;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.onesite.stepdefinitions.CreateComputerPageSteps;
-
 public class DateUtil {
 	private static final Logger LOGGER = LogManager.getLogger(DateUtil.class);
 	private static DateUtil dateUtil;

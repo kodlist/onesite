@@ -162,8 +162,7 @@ public class UpdateComputerPage {
 				 setComputerNameWebElement(webElement.findElement(By.tagName("td")));
 				 List<WebElement> listOrColumnsInTheRow = webElement.findElements(By.tagName("td"));				 
 				 for(WebElement webElementTd : listOrColumnsInTheRow){ 					
-					 if(!(webElementTd.getText().equalsIgnoreCase(dateToSearch))){
-						 System.out.println("--------- line 161 ----- "+webElementTd.getText() );
+					 if(!(webElementTd.getText().equalsIgnoreCase(dateToSearch))){						 
 						 flag = true;
 					 }
 				 }				 
