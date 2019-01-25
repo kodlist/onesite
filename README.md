@@ -133,7 +133,7 @@ Test Runner class:
 ------------------
 
 &nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/test_runner.JPG "test runner")
+![alt text](src/test/resources/com/onesite/images/test_runner_class.JPG "test runner")
 
 
 Project Structure:
