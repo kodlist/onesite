@@ -87,7 +87,7 @@ Running test from IDE (Eclipse):
 
 2. open TestRunner class from `src/test/java/com/onesite`
 
-3. click on project root and run as junit test
+3. click on project root, and navigate to `src\test\java\com\onesite` and open `TestRunner` class and run as junit test
 
 4. JUnit test results can be found in `target` folder.
 
@@ -98,7 +98,7 @@ Running test from Jenkins:
 
 1. Go to your project directory from terminal and hit following commands
 
-* `mvn test (defualt will run on local firefox browser)`
+* ``
 
 
 Do's and Don't
@@ -113,6 +113,25 @@ Do's and Don't
 4. Don't run in `geckodriver`, as we seen current issue with close and quit options in firefox driver. And I haven't find alternative to this.
 
 5. For point 4, you shouldn't be worry if you plan to run against chrome, because I have set `chrome` as browser type in `configuration.properties`.
+
+
+Cucumber feature file:
+----------------------
+
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/cucumber_feature.jpg "scenario tags")
+
+
+Sample Execution Report:
+------------------------
+
+
+
+Project Structure:
+------------------
+
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/project_structure.jpg "project structure")
 
 
 Conclusion:
