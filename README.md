@@ -1,43 +1,93 @@
 ## Objective: Test cases and Test automation 
 
-1. Please navigate to the following sample application: http://computer-database.herokuapp.com/computers
-2. Select one of the computers and create a series of manual test cases that cover the CRUD operation plus the edge cases.
-   Make sure that you give detailed instructions for each test case (step preconditions, steps to execute test case, expected results, etc).
-   You can use any format you prefer.
-3. Decide which test cases are you going to automate. You can use any open source tool prefer. Write documentation on how to run tests with the chosen tool.
+1. Navigate to the following sample application: http://computer-database.herokuapp.com/computers
+2. Test CRUD operations. 
+3. In this project work I have automated basic CRUD operation considering positive cases.
 
+
+What is Tested:
+---------------
+
+1. Tested on Windows 10
+2. Tested positive CRUD operations.
+3. Tested on Chrome browser.
+4. Tested on Jenkins (local) using jenkins script (it is not full blown CI/CD). 
+
+
+What is not Tested:
+-------------------
+
+1. Negative tests.
+2. Not tested on Linux OS.
+3. Not tested in Docker container.
 
 
 Technology stack:
 -----------------
 
-1. java
+1. java 8
 2. cucumber
 3. maven
 4. selenium
-5. junit
+5. junit 4
+6. log4j 2.11
+6. windows 10 OS
+
+
+Open source libraries used:
+---------------------------
+
+1. junit 4
+2. chromedriver
+3. selenium 3.14
+4. cucumber java
+5. extent reports
+6. log4j
     
 
 Patterns used:
 -----------------
 
-1. page object factory
-2. singleton
+1. page object factory from selenium.
+2. singleton pattern.
+
+
+Download code:
+---------------
+
+Do git clone for downloading the project to your local machine and then import project to your IDE.
+
+Install with [git](https://git-scm.com/downloads):
+	
+```sh
+$ git clone https://github.realpage.com/realpage/eqa-unifiedlogin.git
+
 
 
 Running test from command line
 ------------------------------
 
-Go to your project directory from terminal and hit following commands
-* `mvn test (defualt will run on local firefox browser)`
+1. You can git bash or any choice of shell.
+
+2. Go to your project directory from terminal and hit following command:
+* `mvn clean package compiler:testCompile surefire:test`
+
+3. Test results or reports can be found in `cucumber-reports` folder which is under `target` directory.
+
+4. logfile under project root, which you can open to see what steps were executed. It is simple logger info.
+
 
 Running test from IDE (Eclipse)
 -------------------------------
 
-1. clone the git project https://github.com/meharlist/onesite.git
-2. Import to IDE
-3. open TestRunner class from `src/test/java/com/onesite`
-4. runs as junit test
+1. Import project to IDE
+
+2. open TestRunner class from `src/test/java/com/onesite`
+
+3. click on project root and run as junit test
+
+4. JUnit test results can be found in `target` folder.
+
 
 
 Running test from Jenkins
