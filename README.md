@@ -72,7 +72,7 @@ Running test from command line:
 2. Go to your project directory from terminal and hit below command:
 
 ```sh
-$ `mvn clean package compiler:testCompile surefire:test`
+$ mvn clean package compiler:testCompile surefire:test
 ```
 
 3. Test results or reports can be found in `cucumber-reports` folder which is under `target` directory.
@@ -99,6 +99,20 @@ Running test from Jenkins:
 1. Go to your project directory from terminal and hit following commands
 
 * `mvn test (defualt will run on local firefox browser)`
+
+
+Do's and Don't
+--------------
+
+1. Please do not execute in Linux OS.
+
+2. If you try running on Linux then configuration needs changes, especially with file navigation, because linux file navigation uses `//` on contrast windows uses `\\`
+
+3. Due to point 2 your execution will fail.
+
+4. Don't run in `geckodriver`, as we seen current issue with close and quit options in firefox driver. And I haven't find alternative to this.
+
+5. For point 4, you shouldn't be worry if you plan to run against chrome, because I have set `chrome` as browser type in `configuration.properties`.
 
 
 Conclusion:
