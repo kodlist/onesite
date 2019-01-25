@@ -67,11 +67,13 @@ $ git clone https://github.realpage.com/realpage/eqa-unifiedlogin.git
 Running test from command line:
 ------------------------------
 
-1. You can git bash or any choice of shell.
+1. You can use git bash or any choice of shell.
 
-2. Go to your project directory from terminal and hit following command:
+2. Go to your project directory from terminal and hit below command:
 
-* `mvn clean package compiler:testCompile surefire:test`
+```sh
+$ `mvn clean package compiler:testCompile surefire:test`
+```
 
 3. Test results or reports can be found in `cucumber-reports` folder which is under `target` directory.
 
