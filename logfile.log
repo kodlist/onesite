@@ -1,0 +1,113 @@
+INFO  | 2019-01-25 15:59:35 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:58) - -------------------------------------
+INFO  | 2019-01-25 15:59:35 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:59) - -------------------------------------
+INFO  | 2019-01-25 15:59:35 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:60) - --------- Start of Scenario ----------
+INFO  | 2019-01-25 15:59:35 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:61) - -------- scenario name : createComputerScenario ---------
+INFO  | 2019-01-25 15:59:35 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:49) - Start the browser and clear the cookies
+INFO  | 2019-01-25 15:59:40 | [main] managers.WebDriverManager (WebDriverManager.java:51) - -------- setting chrome driver -------
+INFO  | 2019-01-25 15:59:40 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:23) - --------- in backgroundsteps class ----------
+INFO  | 2019-01-25 15:59:41 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:27) - --------- application url opened..... ----------
+INFO  | 2019-01-25 15:59:41 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:45) - ------------ click add new computer button -------------
+INFO  | 2019-01-25 15:59:41 | [main] pages.CreateComputerPage (CreateComputerPage.java:53) - ------ now in create computer page ------
+INFO  | 2019-01-25 15:59:42 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:56) - ------- trying to create new computer name -------
+INFO  | 2019-01-25 15:59:42 | [main] utilities.RandomNumberUtil (RandomNumberUtil.java:21) - ------- generating random number --------
+INFO  | 2019-01-25 15:59:42 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:61) - ------- created new computer name 'onesite38148 -------
+INFO  | 2019-01-25 15:59:42 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:73) - ------- enter new introduced date ------- 
+INFO  | 2019-01-25 15:59:42 | [main] utilities.DateUtil (DateUtil.java:55) - -------- creating new custom date by adding years '10' -------- 
+INFO  | 2019-01-25 15:59:42 | [main] utilities.DateUtil (DateUtil.java:69) - -------- created new custom date '2029-01-25' by adding years '2029' -------- 
+INFO  | 2019-01-25 15:59:42 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:86) - ------- enter new discontinued date ------- 
+INFO  | 2019-01-25 15:59:42 | [main] pages.CreateComputerPage (CreateComputerPage.java:94) - ------- company selected from drop down ------
+INFO  | 2019-01-25 15:59:43 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:97) - ------- clicked create submit button -------- 
+INFO  | 2019-01-25 15:59:43 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:118) - ------- saving new computer name : onesite38148 in json file for next scenario --------
+INFO  | 2019-01-25 15:59:43 | [main] stepdefinitions.CreateComputerPageSteps (CreateComputerPageSteps.java:119) - ------ json file should be in scenariodata directory ------
+INFO  | 2019-01-25 15:59:43 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:94) - -----------All sessions - including page objects, utilities, page manager, webdriver closed ----------
+INFO  | 2019-01-25 15:59:43 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:95) - -------------------------------------
+INFO  | 2019-01-25 15:59:43 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:96) - -------------------------------------
+INFO  | 2019-01-25 15:59:50 | [main] managers.WebDriverManager (WebDriverManager.java:149) - -------- closing webdriver -------
+INFO  | 2019-01-25 15:59:50 | [main] managers.WebDriverManager (WebDriverManager.java:161) - -------- quiting webdriver -------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:86) - ......................................
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:87) - -----------End of Scenario-----------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:88) - ......................................
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:89) - ......................................
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:58) - -------------------------------------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:59) - -------------------------------------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:60) - --------- Start of Scenario ----------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:61) - -------- scenario name : readComputerScenario ---------
+INFO  | 2019-01-25 15:59:51 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:49) - Start the browser and clear the cookies
+INFO  | 2019-01-25 15:59:54 | [main] managers.WebDriverManager (WebDriverManager.java:51) - -------- setting chrome driver -------
+INFO  | 2019-01-25 15:59:54 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:23) - --------- in backgroundsteps class ----------
+INFO  | 2019-01-25 15:59:55 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:27) - --------- application url opened..... ----------
+INFO  | 2019-01-25 15:59:55 | [main] stepdefinitions.ReadComputerPageSteps (ReadComputerPageSteps.java:41) - -------- get computer name from json file that was saved from earlier scenario --------
+INFO  | 2019-01-25 15:59:55 | [main] stepdefinitions.ReadComputerPageSteps (ReadComputerPageSteps.java:47) - -------- name of the computer to search : 'onesite38148' was set.....
+INFO  | 2019-01-25 15:59:55 | [main] stepdefinitions.ReadComputerPageSteps (ReadComputerPageSteps.java:54) - -------- enter computer name in search box ---------
+INFO  | 2019-01-25 15:59:55 | [main] pages.ReadComputerPage (ReadComputerPage.java:65) - ------- in main page or read page and driver to search for a computer ------- 
+INFO  | 2019-01-25 15:59:56 | [main] stepdefinitions.ReadComputerPageSteps (ReadComputerPageSteps.java:61) - -------- searching started ---------
+INFO  | 2019-01-25 15:59:56 | [main] pages.ReadComputerPage (ReadComputerPage.java:119) - -------- computer found --------- 
+INFO  | 2019-01-25 15:59:56 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:94) - -----------All sessions - including page objects, utilities, page manager, webdriver closed ----------
+INFO  | 2019-01-25 15:59:56 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:95) - -------------------------------------
+INFO  | 2019-01-25 15:59:56 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:96) - -------------------------------------
+INFO  | 2019-01-25 16:00:03 | [main] managers.WebDriverManager (WebDriverManager.java:149) - -------- closing webdriver -------
+INFO  | 2019-01-25 16:00:03 | [main] managers.WebDriverManager (WebDriverManager.java:161) - -------- quiting webdriver -------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:86) - ......................................
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:87) - -----------End of Scenario-----------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:88) - ......................................
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:89) - ......................................
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:58) - -------------------------------------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:59) - -------------------------------------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:60) - --------- Start of Scenario ----------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:61) - -------- scenario name : updateComputerScenario ---------
+INFO  | 2019-01-25 16:00:03 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:49) - Start the browser and clear the cookies
+INFO  | 2019-01-25 16:00:07 | [main] managers.WebDriverManager (WebDriverManager.java:51) - -------- setting chrome driver -------
+INFO  | 2019-01-25 16:00:07 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:23) - --------- in backgroundsteps class ----------
+INFO  | 2019-01-25 16:00:08 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:27) - --------- application url opened..... ----------
+INFO  | 2019-01-25 16:00:08 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:38) - -------- get computer name from json file that was saved from earlier scenario -------- 
+INFO  | 2019-01-25 16:00:08 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:49) - -------- enter computer name in search box ---------
+INFO  | 2019-01-25 16:00:08 | [main] pages.UpdateComputerPage (UpdateComputerPage.java:135) - ------- trying to search for computer that I need --------
+INFO  | 2019-01-25 16:00:08 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:65) - ------- trying to click computer link that I need --------
+INFO  | 2019-01-25 16:00:09 | [main] pages.UpdateComputerPage (UpdateComputerPage.java:152) - ------- clicked on computer link that I need --------
+INFO  | 2019-01-25 16:00:09 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:73) - ------- current discontinued date '2029-01-25'--------
+INFO  | 2019-01-25 16:00:09 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:79) - ------- cleared discontinued date field -------- 
+INFO  | 2019-01-25 16:00:09 | [main] utilities.DateUtil (DateUtil.java:55) - -------- creating new custom date by adding years '10' -------- 
+INFO  | 2019-01-25 16:00:09 | [main] utilities.DateUtil (DateUtil.java:69) - -------- created new custom date '2039-01-25' by adding years '2039' -------- 
+INFO  | 2019-01-25 16:00:09 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:91) - -------- entering new discontinued date date by adding years = '10' -------- 
+INFO  | 2019-01-25 16:00:09 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:96) - --------- click save button ---------
+INFO  | 2019-01-25 16:00:09 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:102) - ------- now searching for updated computer and verifying the updated discontinue date -------
+INFO  | 2019-01-25 16:00:10 | [main] pages.UpdateComputerPage (UpdateComputerPage.java:135) - ------- trying to search for computer that I need --------
+INFO  | 2019-01-25 16:00:10 | [main] pages.UpdateComputerPage (UpdateComputerPage.java:156) - ------- trying to see whether the discontinued date is updated --------
+INFO  | 2019-01-25 16:00:10 | [main] pages.UpdateComputerPage (UpdateComputerPage.java:173) - ------- the updated discontinued date is updated with no issues... --------
+INFO  | 2019-01-25 16:00:10 | [main] stepdefinitions.UpdateComputerPageSteps (UpdateComputerPageSteps.java:110) - -------- successfull, date is updated as expected.... --------
+INFO  | 2019-01-25 16:00:10 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:94) - -----------All sessions - including page objects, utilities, page manager, webdriver closed ----------
+INFO  | 2019-01-25 16:00:10 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:95) - -------------------------------------
+INFO  | 2019-01-25 16:00:10 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:96) - -------------------------------------
+INFO  | 2019-01-25 16:00:17 | [main] managers.WebDriverManager (WebDriverManager.java:149) - -------- closing webdriver -------
+INFO  | 2019-01-25 16:00:17 | [main] managers.WebDriverManager (WebDriverManager.java:161) - -------- quiting webdriver -------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:86) - ......................................
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:87) - -----------End of Scenario-----------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:88) - ......................................
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:89) - ......................................
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:58) - -------------------------------------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:59) - -------------------------------------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:60) - --------- Start of Scenario ----------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:61) - -------- scenario name : deleteComputerScenario ---------
+INFO  | 2019-01-25 16:00:18 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:49) - Start the browser and clear the cookies
+INFO  | 2019-01-25 16:00:21 | [main] managers.WebDriverManager (WebDriverManager.java:51) - -------- setting chrome driver -------
+INFO  | 2019-01-25 16:00:21 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:23) - --------- in backgroundsteps class ----------
+INFO  | 2019-01-25 16:00:22 | [main] stepdefinitions.BackgroundSteps (BackgroundSteps.java:27) - --------- application url opened..... ----------
+INFO  | 2019-01-25 16:00:22 | [main] stepdefinitions.DeleteComputerPageSteps (DeleteComputerPageSteps.java:32) - -------- get computer name from json file that was saved from earlier scenario -------- 
+INFO  | 2019-01-25 16:00:22 | [main] stepdefinitions.DeleteComputerPageSteps (DeleteComputerPageSteps.java:43) - -------- enter computer name in search box ---------
+INFO  | 2019-01-25 16:00:22 | [main] pages.DeleteComputerPage (DeleteComputerPage.java:105) - ------- trying to search for computer that I need --------
+INFO  | 2019-01-25 16:00:23 | [main] pages.DeleteComputerPage (DeleteComputerPage.java:120) - ------- trying to click the computer that I need --------
+INFO  | 2019-01-25 16:00:23 | [main] pages.DeleteComputerPage (DeleteComputerPage.java:54) - ------- now clicking deleting computer --------
+INFO  | 2019-01-25 16:00:23 | [main] pages.ReadComputerPage (ReadComputerPage.java:65) - ------- in main page or read page and driver to search for a computer ------- 
+INFO  | 2019-01-25 16:00:24 | [main] pages.DeleteComputerPage (DeleteComputerPage.java:58) - ------- since we deleted out computer from earlier scenario, it should no persist in UI --------
+INFO  | 2019-01-25 16:00:24 | [main] pages.DeleteComputerPage (DeleteComputerPage.java:58) - ------- since we deleted out computer from earlier scenario, it should no persist in UI --------
+INFO  | 2019-01-25 16:00:24 | [main] stepdefinitions.DeleteComputerPageSteps (DeleteComputerPageSteps.java:76) - -------- it seems computer deleted successfully ---------
+INFO  | 2019-01-25 16:00:24 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:94) - -----------All sessions - including page objects, utilities, page manager, webdriver closed ----------
+INFO  | 2019-01-25 16:00:24 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:95) - -------------------------------------
+INFO  | 2019-01-25 16:00:24 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:96) - -------------------------------------
+INFO  | 2019-01-25 16:00:31 | [main] managers.WebDriverManager (WebDriverManager.java:149) - -------- closing webdriver -------
+INFO  | 2019-01-25 16:00:31 | [main] managers.WebDriverManager (WebDriverManager.java:161) - -------- quiting webdriver -------
+INFO  | 2019-01-25 16:00:32 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:86) - ......................................
+INFO  | 2019-01-25 16:00:32 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:87) - -----------End of Scenario-----------
+INFO  | 2019-01-25 16:00:32 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:88) - ......................................
+INFO  | 2019-01-25 16:00:32 | [main] hooks.TestBaseSetUp (TestBaseSetUp.java:89) - ......................................
+INFO  | 2019-01-25 16:00:32 | [main] onesite.TestRunner (TestRunner.java:39) - ----- Generating html report with test results, and you should see them in cucumber-reports under target directory.... ------ 
