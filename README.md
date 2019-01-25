@@ -101,7 +101,7 @@ Running test from Jenkins:
 * ``
 
 
-Do's and Don't
+Do's and Don't:
 --------------
 
 1. Please do not execute in Linux OS.
@@ -119,7 +119,7 @@ Cucumber feature file:
 ----------------------
 
 &nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/cucumber_feature.jpg "scenario tags")
+![alt text](src/test/resources/com/onesite/images/cucumber_feature.JPG "scenario tags")
 
 
 Sample Execution Report:
@@ -131,7 +131,7 @@ Project Structure:
 ------------------
 
 &nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/project_structure.jpg "project structure")
+![alt text](src/test/resources/com/onesite/images/project_structure.JPG "project structure")
 
 
 Conclusion:
