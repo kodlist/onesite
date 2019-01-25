@@ -61,7 +61,7 @@ Install with [git](https://git-scm.com/downloads):
 	
 ```sh
 $ git clone https://github.realpage.com/realpage/eqa-unifiedlogin.git
-
+```
 
 
 Running test from command line:
