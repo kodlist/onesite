@@ -97,9 +97,13 @@ Running test from IDE (Eclipse):
 Running test from Jenkins:
 -------------------------------
 
-1. Go to your project directory from terminal and hit following commands
+1. This was tested in my local jenkins instance using pipeline script.
 
-* ``
+2. With few tweaks you can run this project in jenkins too.
+
+3. Please see below images to run them in jenkins.
+
+* `images not ready, yet`
 
 
 Do's and Don't:
