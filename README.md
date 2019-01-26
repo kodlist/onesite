@@ -3,6 +3,7 @@
 1. Navigate to the following sample application: http://computer-database.herokuapp.com/computers
 2. Test CRUD operations. 
 3. In this project work I have automated basic CRUD operations, and considered only positive cases.
+4. This work is UI Functional testing, not a backend or webservices test automation.
 
 
 What is Tested:
