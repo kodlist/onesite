@@ -60,7 +60,7 @@ Do git clone for downloading the project to your local machine and then import p
 Install with [git](https://git-scm.com/downloads):
 	
 ```sh
-$ git clone https://github.realpage.com/realpage/eqa-unifiedlogin.git
+$ git clone https://github.com/meharlist/onesite.git
 ```
 
 
