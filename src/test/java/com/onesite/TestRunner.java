@@ -21,7 +21,7 @@ import com.onesite.stepdefinitions.CreateComputerPageSteps;
 
   @RunWith(Cucumber.class)
   @CucumberOptions( features = {"src/test/resources"},		  			
-		  			format = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},					
+		  			plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},					
 		  		    monochrome = true,
   					glue={"com.onesite.stepdefinitions", "com.onesite.hooks"},
   					tags={"@createComputerScenario,@readComputerScenario, @updateComputerScenario, @deleteComputerScenario" } )
