@@ -16,12 +16,12 @@ import com.cucumber.listener.Reporter;
 import com.onesite.managers.FileReaderManager;
 import com.onesite.stepdefinitions.CreateComputerPageSteps;
 
-
+//plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
 
 
   @RunWith(Cucumber.class)
   @CucumberOptions( features = {"src/test/resources"},		  			
-		  			plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+		  			format = {"pretty", "html:target/cucumber-html-report", "pretty:target/cucumber-report.json"},					
 		  		    monochrome = true,
   					glue={"com.onesite.stepdefinitions", "com.onesite.hooks"},
   					tags={"@createComputerScenario,@readComputerScenario, @updateComputerScenario, @deleteComputerScenario" } )
