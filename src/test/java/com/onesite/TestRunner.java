@@ -26,8 +26,9 @@ import com.onesite.stepdefinitions.CreateComputerPageSteps;
   					glue={"com.onesite.stepdefinitions", "com.onesite.hooks"},
   					tags={"@createComputerScenario,@readComputerScenario, @updateComputerScenario, @deleteComputerScenario" } )
   public class TestRunner {
-	  private static final Logger LOGGER = LogManager.getLogger(TestRunner.class);	
-	  @AfterClass
+	  private static final Logger LOGGER = LogManager.getLogger(TestRunner.class);
+	  
+	  /*@AfterClass
 	  public static void writeExtentReport() {
 		  Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReaderInstance().getReportConfigPath()));
 		  Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
@@ -38,6 +39,6 @@ import com.onesite.stepdefinitions.CreateComputerPageSteps;
 		  
 		  LOGGER.info("----- Generating html report with test results, and you should see them in cucumber-reports under target directory.... ------ ");
 		  
-	  }
+	  }*/
 
   }
