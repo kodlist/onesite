@@ -163,6 +163,13 @@ Running test from Jenkins:
 18. to see cucumber reports, click `cucumber reports` link as shown in above image.
 
 
+19. this is how report looks like.
+
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/cucumber_report_jen.JPG "cucumber")
+
+
+
 
 
 Do's and Don't:
