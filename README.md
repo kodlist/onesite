@@ -97,78 +97,8 @@ Running test from IDE (Eclipse):
 Running test from Jenkins:
 -------------------------------
 
-1. First change the code in `TestRunner.java` class. please see below. 
-
-2.   The code should look exactly as shown in below image , and this is to run in jenkins. Note, if you are running in local, please leave the code as it is.
+1. Please this git link `https://github.com/meharlist/onesite-jenkins`
    
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/test_runner_class_02.JPG "manage plugin01")
-   
-   
-3. This was tested in my local jenkins instance using pipeline script.
-
-4. With few tweaks you can run this project in jenkins too.
-
-5. Please see below images and instructions to run them in jenkins.
-
-6. install jenkins in your windows machine (this is working in windows).
-
-7. open the instance webpage using url (`localhost:8080`)
-
-8. create user if it is first time.
-
-9. then you be should landed in main page of jenkins.
-
-10. install below plugins, to have this you need to navigate to manage plugins.
-
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/manage_jenkins_01.JPG "manage plugin01")
-
-11. naviagte to manage plugins
-
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/manage_jenkins_02.JPG "manage plugin02")
-
-12. install cucumber plugins.
-
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/cucumber_plugin.JPG "cucumber")
-
-13. Next, go to main page, click create new jenkins job.
-
-14. click `Build Triggers`
-  
-15. select `Pipeline script` and copy the pipeline script from `pipeline_script_to_use.txt`, this file is in `src\test\resources\com\onesite\images` .
-
-16. paste the script in `Pipeline script` section. make sure `use Groovy Sandbox` is checked, please see below image. 
-
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/pipeline_Script_01.JPG "cucumber")
-
-
-15. finally save the job.
-
-16. to run the job, you have to click `build now`
-
-17. you should see something like this.
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/pipeline_build_execution.JPG "cucumber")
-
-
-18. to see cucumber reports, click `cucumber reports` link as shown in above image.
-
-
-19. this is how report looks like.
-
-&nbsp;&nbsp;
-![alt text](src/test/resources/com/onesite/images/cucumber_report_jen.JPG "cucumber")
-
-
 
 
 
