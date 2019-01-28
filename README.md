@@ -78,7 +78,7 @@ $ mvn clean package compiler:testCompile surefire:test
 
 3. Test results or reports can be found in `cucumber-reports` folder which is under `target` directory.
 
-4. logfile under project root, which you can open to see what steps were executed. It is simple logger info.
+4. `logfile` under project root, which you can open to see what steps were executed. It is simple logger info.
 
 
 Running test from IDE (Eclipse):
@@ -103,25 +103,28 @@ Running test from Jenkins:
 
 3. Please see below images and instructions to run them in jenkins.
 
-4. Install jenkins in your windows machine (this is working in windows).
+4. install jenkins in your windows machine (this is working in windows).
 
-5. open the instance webpage using localhost:8080
+5. open the instance webpage using url (`localhost:8080`)
 
 6. create user if it is first time.
 
-7. will be landed in main page 
+7. then you should be landed in main page of jenkins.
 
-8. Install below plugins, to have this you need to navigate to manage plugins.
+8. install below plugins, to have this you need to navigate to manage plugins.
+
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/manage_jenkins_01.JPG "manage plugin01")
 
 9. naviagte to manage plugins
 
+
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/manage_jenkins_02.JPG "manage plugin02")
 
 10. install cucumber plugins.
+
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/cucumber_plugin.JPG "cucumber")
@@ -132,7 +135,8 @@ Running test from Jenkins:
   
 13. select `Pipeline script` and copy the pipeline script from `pipeline_Sciprt_to_use.txt`, this file is in `src\test\resources\com\onesite\images` .
 
-14. paste the script in `Pipeline script` section. see below image. 
+14. paste the script in `Pipeline script` section. make sure `use Groovy Sandbox` is checked, please see below image. 
+
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/pipeline_Script_01.JPG "cucumber")
