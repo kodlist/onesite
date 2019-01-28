@@ -97,49 +97,71 @@ Running test from IDE (Eclipse):
 Running test from Jenkins:
 -------------------------------
 
-1. This was tested in my local jenkins instance using pipeline script.
+1. First change the code in `TestRunner.java` class. please see below. 
 
-2. With few tweaks you can run this project in jenkins too.
+2.   The code should look exactly as shown in below image , and this is to run in jenkins. Note, if you are running in local, please leave the code as it is.
+   
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/test_runner_class_02.JPG "manage plugin01")
+   
+   
+3. This was tested in my local jenkins instance using pipeline script.
 
-3. Please see below images and instructions to run them in jenkins.
+4. With few tweaks you can run this project in jenkins too.
 
-4. install jenkins in your windows machine (this is working in windows).
+5. Please see below images and instructions to run them in jenkins.
 
-5. open the instance webpage using url (`localhost:8080`)
+6. install jenkins in your windows machine (this is working in windows).
 
-6. create user if it is first time.
+7. open the instance webpage using url (`localhost:8080`)
 
-7. then you should be landed in main page of jenkins.
+8. create user if it is first time.
 
-8. install below plugins, to have this you need to navigate to manage plugins.
+9. then you be should landed in main page of jenkins.
+
+10. install below plugins, to have this you need to navigate to manage plugins.
 
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/manage_jenkins_01.JPG "manage plugin01")
 
-9. naviagte to manage plugins
+11. naviagte to manage plugins
 
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/manage_jenkins_02.JPG "manage plugin02")
 
-10. install cucumber plugins.
+12. install cucumber plugins.
 
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/cucumber_plugin.JPG "cucumber")
 
-11. create new jenkins job.
+13. create new jenkins job.
 
-12. click `Build Triggers`
+14. click `Build Triggers`
   
-13. select `Pipeline script` and copy the pipeline script from `pipeline_Sciprt_to_use.txt`, this file is in `src\test\resources\com\onesite\images` .
+15. select `Pipeline script` and copy the pipeline script from `pipeline_script_to_use.txt`, this file is in `src\test\resources\com\onesite\images` .
 
-14. paste the script in `Pipeline script` section. make sure `use Groovy Sandbox` is checked, please see below image. 
+16. paste the script in `Pipeline script` section. make sure `use Groovy Sandbox` is checked, please see below image. 
 
 
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/pipeline_Script_01.JPG "cucumber")
+
+
+15. finally save the job.
+
+16. to run the job, you have to click `build now`
+
+17. you should see something like this.
+
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/pipeline_build_execution.JPG "cucumber")
+
+
+18. to see cucumber reports, click `cucumber reports` link as shown in above image.
+
 
 
 

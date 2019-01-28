@@ -103,7 +103,9 @@
             <configuration>             
            		 <includes>
                      <include>**/TestRunner.java</include>
+                     
                  </includes>
+                 
                  <!-- <skipTests>true</skipTests> -->                 
             </configuration>          
     	  </plugin>		
