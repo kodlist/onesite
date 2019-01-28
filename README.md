@@ -137,7 +137,7 @@ Running test from Jenkins:
 &nbsp;&nbsp;
 ![alt text](src/test/resources/com/onesite/images/cucumber_plugin.JPG "cucumber")
 
-13. create new jenkins job.
+13. Next, go to main page, click create new jenkins job.
 
 14. click `Build Triggers`
   
