@@ -97,7 +97,7 @@ Running test from IDE (Eclipse):
 Running test from Jenkins:
 -------------------------------
 
-1. Please this git link `https://github.com/meharlist/onesite-jenkins`
+1. Please follow this git link `https://github.com/meharlist/onesite-jenkins`
    
 
 

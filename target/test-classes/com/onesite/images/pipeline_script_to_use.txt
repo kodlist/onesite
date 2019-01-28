@@ -1,0 +1,62 @@
+pipeline {     
+    agent any	
+    stages{
+        
+        stage('pull code from git repo'){
+            
+                    steps {
+                          
+                             echo 'SCM checkout, here code is pulled from source code management, in our case it is our git repo'
+                             git branch: 'master', credentialsId: '0f28b7ed-7c84-4f02-87e0-5541c076ad59', url: 'https://github.com/meharlist/onesite.git'
+							
+                    }
+        }
+        stage('mvn clean and then run tests'){
+                    steps {
+                            
+                            echo 'clean the package onesite-functionl-test'
+							
+                            script{
+                                   try{
+                                     	mvnHome = tool name: 'M3', type: 'maven'							   
+									    // Run the maven build
+										if (isUnix()) {
+												sh "'${mvnHome}/bin/mvn' clean package compiler:testCompile surefire:test"
+										} else {
+												bat(/"${mvnHome}\bin\mvn" clean package compiler:testCompile surefire:test/)
+										}
+                                       
+                                   }catch(Exception e){
+                                       currentBuild.result = 'UNSTABLE'
+                                    }
+                            }
+
+                    }
+
+        }        
+        stage('generate report'){
+                  steps {
+                        echo 'generating cucumber html report' 
+                        cucumber fileExcludePattern: '**/CustomerInfo.json', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
+                        
+                  }
+
+        }        
+        stage('email test report'){
+                  steps{
+                      echo 'send email'
+                      emailext body: "<h2 style='color:#f66021; font-family: Verdana, Geneva, Tahoma, sans-serif'>Test Report for onesite-ui test automation </h2><h3>Automation job number ${env.BUILD_NUMBER} completed with status <b><i>${currentBuild.currentResult}</i></b></h3>Test Details<ol style='list-style-type:disc'><li>Test Result: ${currentBuild.currentResult}</li><li>Build Duration : ${currentBuild.durationString}</li><li><a href='${env.BUILD_URL}'>Build Link ${env.BUILD_NUMBER}</a></li><li><a href='${env.BUILD_URL}cucumber-html-reports/overview-features.html'>Report Link</a></li></ol><a href='${env.BUILD_URL}cucumber-html-reports/overview-trends.html'>Run History</a><p>Use your corporate account to sign in and view reports. e.g John Sinns will sign in as jsinns </p>",subject: '$DEFAULT_SUBJECT', to: 'kmehar650@gmail.com' , mimeType: 'text/html'
+					  
+					  
+                  }
+        }
+		stage('clean ws'){					
+					steps{
+						cleanWs()
+					}
+		}
+
+
+     }
+	 
+}
