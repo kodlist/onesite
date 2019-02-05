@@ -86,12 +86,37 @@ Running test from IDE (Eclipse):
 
 1. Import project to IDE
 
-2. open TestRunner class from `src/test/java/com/onesite`
+2. open TestRunner class from `src\test\java\com\onesite`
 
 3. click on project root, and navigate to `src\test\java\com\onesite` and open `TestRunner` class and run as junit test
 
 4. JUnit test results can be found in `target` folder.
 
+5. Also, you have another option to execute from IDE.
+
+6. you can copy mvn command, see below.
+
+```sh
+  clean package compiler:testCompile surefire:test
+```
+
+7. And go to project root folder in eclipse and click `Run As` -> `Run Configurations` and then
+   double click on `maven build` and keep exactly as below image.
+  
+
+&nbsp;&nbsp;
+![alt text](src/test/resources/com/onesite/images/maven_run_config.JPG "maven run config")
+
+
+8. click `apply` and `run`
+
+9. test results are in `target` folder.
+
+10. Possible issues you might encounter, java run time issue, if it is the case, do some internet search on how to execute maven project from `Eclipse IDE`
+
+11. You might run into above issue because you did not set your `java build path` -> `JRE system library` to `jdk 8` and you forgot to set `java compiler` to `java 8`.
+
+12. For point 11, the settings are in eclipse, navigate to project root folder and then click `build path` by left clicking and set the point 11.
 
 
 Running test from Jenkins:
@@ -111,7 +136,7 @@ Do's and Don't:
 
 3. Due to point 2 your execution will fail.
 
-4. Don't run in `geckodriver`, as we seen current issue with close and quit options in firefox driver. And I haven't find alternative to this.
+4. Don't run in `geckodriver` OR `firefoxdriver`
 
 5. For point 4, you shouldn't be worry if you plan to run against chrome, because I have set `chrome` as browser type in `configuration.properties`.
 
@@ -144,9 +169,5 @@ Project Structure:
 ![alt text](src/test/resources/com/onesite/images/project_structure.JPG "project structure")
 
 
-Conclusion:
------------
 
-1. Due to time constraint few things were (as stated above) not included or tested.
-2. Given few more days I would have completed things which I haven't tested.
 
